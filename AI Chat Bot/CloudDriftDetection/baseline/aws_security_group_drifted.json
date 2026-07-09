@@ -1,0 +1,27 @@
+{
+  "ResourceName": "Production-Database-SG",
+  "ResourceType": "AWS::EC2::SecurityGroup",
+  "Properties": {
+    "GroupDescription": "Production Database Access Control List",
+    "SecurityGroupIngress": [
+      {
+        "IpProtocol": "tcp",
+        "FromPort": 3306,
+        "ToPort": 3306,
+        "CidrIp": "10.0.0.0/16"
+      },
+      {
+        "IpProtocol": "tcp",
+        "FromPort": 22,
+        "ToPort": 22,
+        "CidrIp": "0.0.0.0/0"
+      }
+    ],
+    "SecurityGroupEgress": [
+      {
+        "IpProtocol": "-1",
+        "CidrIp": "0.0.0.0/0"
+      }
+    ]
+  }
+}

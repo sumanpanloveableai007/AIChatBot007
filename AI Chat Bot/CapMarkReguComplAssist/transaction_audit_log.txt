@@ -1,0 +1,11 @@
+{
+  "transaction_id": "TX-9988221",
+  "timestamp": "2026-07-08T14:32:01Z",
+  "asset_class": "NMS Equity",
+  "ticker": "AAPL",
+  "volume": "5000",
+  "order_type": "Non-Directed Market Order",
+  "execution_venue": "Apex Clearing",
+  "pfof_rebate_received_usd": 7.50,
+  "client_type": "Retail Investor"
+}

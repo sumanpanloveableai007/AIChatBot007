@@ -1,0 +1,16 @@
+[
+  {
+    "item_id": "ITEM-MC-90",
+    "item_name": "High-Density Microchips",
+    "stock_level": 45,
+    "minimum_required": 100,
+    "critical_for_manufacturing": true
+  },
+  {
+    "item_id": "ITEM-PL-12",
+    "item_name": "Polymer Enclosures",
+    "stock_level": 1200,
+    "minimum_required": 500,
+    "critical_for_manufacturing": false
+  }
+]
