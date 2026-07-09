@@ -1,0 +1,41 @@
+AZURE_API_KEY=sk-M5-Ypb6IFIMqzWAf2s7fxA
+AZURE_API_BASE=https://genailab.tcs.in/
+AZURE_MODEL_NAME="azure/genailab-maas-gpt-4o-mini"
+
+from langchain_openai import ChatOpenAI
+import httpx
+from dotenv import load_dotenv
+import os
+
+
+# Load environment variables from the .env file
+load_dotenv()
+
+# Retrieve the configuration from environment variables
+api_key = os.getenv("AZURE_API_KEY")
+api_base = os.getenv("AZURE_API_BASE")
+model_name = os.getenv("AZURE_MODEL_NAME")
+client = httpx.Client(verify=False)
+
+
+# Quick validation to ensure variables are loaded
+if not all([api_key, api_base, model_name]):
+    raise ValueError("Missing one or more required environment variables in .env file.")
+
+try:
+    print("Connecting to model...")
+
+    llm = ChatOpenAI(
+        base_url=api_base,
+        model=model_name,
+        api_key=api_key,
+        http_client=client
+    )
+    response=llm.invoke("what is capital of india?")
+    
+    # Print the model's response
+    print("\n--- Response ---")
+    print(response.content)
+
+except Exception as e:
+    print(f"An error occurred while connecting to the model: {e}")
